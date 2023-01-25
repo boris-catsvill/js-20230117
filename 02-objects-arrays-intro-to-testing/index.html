@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<script>
+  function sum (a, b) {
+    const result = a + b;
+
+    return () => {
+      console.error(result);
+    }
+  }
+
+  const fn = sum(1, 2);
+
+  fn();
+</script>

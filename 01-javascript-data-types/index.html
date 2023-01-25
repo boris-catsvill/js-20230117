@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<meta charset="UTF-8" />
+
+<script type="module">
+  const obj1 = {
+    color: 'green',
+    settings: {
+      // ...
+    }
+  };
+
+  const obj2 = {
+    description: 'foo-bar'
+  };
+
+  const obj3 = {...obj1, ...obj2};
+  const obj4 = Object.assign(obj1, obj2);
+</script>
