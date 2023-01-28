@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<meta charset="UTF-8" />
+
+<body>
+  <div id="root"></div>
+</body>
+
+<script type="module">
+  class Component {
+    constructor(title = '', data = []) {
+      this.title = title;
+      this.data = data;
+
+      this.render();
+    }
+
+    render () {
+      this.element = document.createElement('div');
+
+      this.element.innerHTML = `
+         <div>
+           <h1>${this.title}</h1>
+           <ul>
+             ${this.getList()}
+           </ul>
+         </div>
+       `;
+    }
+
+    getList () {
+      return this.data.map(item => {
+        return `<li>${item}</li>`;
+      }).join('');
+    }
+  }
+
+  const component = new Component('My first component', ["foo", "bar", "baz"]);
+
+  console.error(component);
+
+  const rootElement = document.querySelector('#root');
+
+  rootElement.append(component.element);
+</script>
