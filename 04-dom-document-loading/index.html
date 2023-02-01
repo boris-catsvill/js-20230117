@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<meta charset="UTF-8" />
+
+<body>
+  <div id="root"></div>
+</body>
+
+<script>
+  // Component.description
+  //
+  class Component {
+    static description = 'bar-bar';
+
+    constructor(text = '') {
+      this.text = text;
+    }
+
+    render () {
+
+    }
+  }
+
+  const obj1 = new Component('a');
+  const obj2 = new Component('b');
+  const obj3 = new Component('c');
+
+  console.error(obj1.__proto__);
+
+  // .prototype fn class
+  // __proto__ ob
+  // [[Prototype]] ob
+  // ?
+
+  // console.error(Object.getPrototypeOf(obj1));
+  console.error(obj1.constructor.prototype === obj2.constructor.prototype);
+
+
+
+</script>
