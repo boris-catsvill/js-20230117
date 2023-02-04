@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<body>
+
+<div id="root"></div>
+
+<button id="btn">Click me maybe?!</button>
+
+<button id="btn2">Remove listener</button>
+
+</body>
+
+<script>
+  class Component {
+    onClick = () => {
+      console.error('message', this.message);
+    }
+
+    constructor(message = '') {
+      this.message = message;
+      this.render();
+      this.initListeners();
+    }
+
+    render() {
+      this.element = document.createElement('div');
+
+      this.element.innerHTML = `
+        <div>
+          <h1>Hello my Component</h1>
+          <button>Click me!</button>
+        </div>
+      `;
+    }
+
+
+    initListeners () {
+      const btn = this.element.querySelector('button');
+
+      btn.addEventListener('click', this.onClick);
+    }
+
+    destroy () {
+      const btn = this.element.querySelector('button');
+
+      btn.removeEventListener('click', this.onClick);
+    }
+  }
+
+  const component = new Component('hello World!');
+</script>
