@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<body>
+  <div id="root"></div>
+</body>
+
+<script type="module">
+  // async/await
+
+  class Component {
+    constructor(props) {
+      this.loadData();
+      console.error(this.data);
+    }
+
+    loadData() {
+      fetch('https://course-js.javascript.ru/api/dashboard/customers?from=2023-01-08T18%3A30%3A00.652Z&to=2023-02-07T18%3A30%3A00.652Z')
+        .then(response => response.json())
+        .then(json => {
+          this.data = json;
+        })
+    }
+  }
+
+  const obj = new Component();
+
+
+</script>
