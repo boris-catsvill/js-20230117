@@ -86,6 +86,8 @@ export default class SortableTable {
   }
 
   async render() {
+    console.error('before render');
+
     const {id, order} = this.sorted;
     const wrapper = document.createElement('div');
 
@@ -249,7 +251,7 @@ export default class SortableTable {
       case 'custom':
         return direction * customSorting(a, b);
       default:
-        return direction * (a[id] - b[id]);
+        throw new Error(`Unknown sort type: "${sortType}"`);
       }
     });
   }
@@ -265,7 +267,9 @@ export default class SortableTable {
   }
 
   remove() {
-    this.element.remove();
+    if (this.element) {
+      this.element.remove();
+    }
   }
 
   destroy() {

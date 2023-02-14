@@ -7,13 +7,11 @@
   import ImageUploader from './index.js';
 
   const fileInput = document.getElementById('fileInput');
+  const uploader = new ImageUploader();
 
   fileInput.addEventListener('change', async () => {
-    const uploader = new ImageUploader();
-
     try {
       const [file] = fileInput.files;
-
       const result = await uploader.upload(file);
 
       alert('Изображение загружено');

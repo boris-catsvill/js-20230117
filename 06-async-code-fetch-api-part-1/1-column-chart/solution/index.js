@@ -129,3 +129,4 @@ export default class ColumnChart {
     this.element.remove();
   }
 }
+
