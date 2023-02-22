@@ -7,7 +7,7 @@
 
 ## Новая тема 
 
-* E2E (end-to-end) тесты: Cypress, puppeteer - повторение
+* E2E (end-to-end) тесты: Cypress, puppeteer
 * Browser history API + router for single page application 
 * Событие `window.addEventListener('popstate', () => { ... logic here });`
 * Динамические импорты import(module)
